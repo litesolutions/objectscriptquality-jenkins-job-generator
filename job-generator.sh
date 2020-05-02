@@ -15,5 +15,5 @@ export COOKIE_JAR=/tmp/cookies
 JENKINS_CRUMB=$(curl --silent --cookie-jar $COOKIE_JAR -s -u $JENKINS_USER:$JENKINS_TOKEN $JENKINS_URL'/crumbIssuer/api/json' | sed -E 's/.*"crumb":"?([^,"]*)"?.*/\1/')
 JOB_NAME_TO_GENERATE=intersystems_iris_contests_$JOB_DISPLAY_NAME
 
-curl -s --cookie $COOKIE_JAR $JENKINS_URL'/job/intersystems_iris_contests/createItem?name='$JOB_NAME_TO_GENERATE -H 'Jenkins-Crumb:'$JENKINS_CRUMB -H "Content-Type:text/xml" -u $JENKINS_USER:$JENKINS_TOKEN --data-binary @/tmp/job-template.xml -v
+curl -s --cookie $COOKIE_JAR $JENKINS_URL'/job/intersystems_iris_contests/createItem?name='$JOB_NAME_TO_GENERATE -H 'Jenkins-Crumb:'$JENKINS_CRUMB -H "Content-Type:text/xml" -u $JENKINS_USER:$JENKINS_TOKEN --data-binary @/tmp/job-template.xml
 rm /tmp/job-template.xml
