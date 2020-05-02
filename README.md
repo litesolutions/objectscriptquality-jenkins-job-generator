@@ -1,6 +1,6 @@
 # ObjectScript Quality Jenkins Job Template
 
-This repository contains the template for ObjectScript Quality Jenkins automatic jobs generation:
+This repository contains the resources for ObjectScript Quality Jenkins automatic jobs generation:
 
 * _job-generator.sh_: script that the "Job Generator" job execute. This script replace parameters on "job_template.xml" and call [ObjectScript Quality Jenkins](https://community-jenkins.objectscriptquality.com/) REST API
 * _job-template.xml_: Jenkins job definition with this parameters
